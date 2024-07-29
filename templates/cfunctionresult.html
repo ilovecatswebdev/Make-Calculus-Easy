@@ -1,0 +1,93 @@
+{% extends "cfunction.html" %}
+{% block body %}
+<br>
+<br>
+{% if func and deriv %}
+<div class="result">
+    <main class="center">
+        <div class="title">Function:</div>
+        <br>
+        <div class="alert">
+            <span class="text">{{ func }}</span>
+        </div>
+        <br>
+        <hr>
+        <div class="title">Answer:</div>
+        <br>
+        <div class="alert">
+            <span class="text">{{ deriv }}</span>
+        </div>
+        <br>
+        <hr>
+    </main>
+</div>
+{% elif func_error or deriv_error %}
+<div class="result">
+    <main class="center">
+        <div class="title">Function:</div>
+        <br>
+        <div class="alert_error">
+            <span class="text">{{ func_error }}</span>
+        </div>
+        <br>
+        <hr>
+        <div class="title">Answer:</div>
+        <br>
+        <div class="alert_error">
+            <span class="text">{{ deriv_error }}</span>
+        </div>
+        <br>
+        <hr>
+    </main>
+</div>
+{% elif func and i %}
+<br>
+<br>
+<div class="result">
+    <main class="center">
+        <div class="title">Function:</div>
+        <br>
+        <div class="alert">
+            <span class="text">{{ func }}</span>
+        </div>
+        <div class="alert_error">
+            <span class="text">{{ func_error }}</span>
+        </div>
+        <br>
+        <hr>
+        <div class="title">Answer:</div>
+        <br>
+        <div class="alert">
+            <span class="text">{{ i }}</span>
+        </div>
+        <div class="alert_error">
+            <span class="text">{{ i_error }}</span>
+        </div>
+        <br>
+        <hr>
+    </main>
+</div>
+{% elif func_error or i_error %}
+<div class="result">
+    <main class="center">
+        <div class="title">Function:</div>
+        <br>
+        <div class="alert_error">
+            <span class="text">{{ func_error }}</span>
+        </div>
+        <br>
+        <hr>
+        <div class="title">Answer:</div>
+        <br>
+        <div class="alert_error">
+            <span class="text">{{ i_error }}</span>
+        </div>
+        <br>
+        <hr>
+    </main>
+</div>
+{% endif %}
+<br>
+<br>
+<br>
+{% endblock %}
